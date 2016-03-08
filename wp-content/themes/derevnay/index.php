@@ -1,18 +1,5 @@
+
 <?php get_header(); ?>
-<div class="content">
-	<div class="menu">
-		<ul>
-			<li><a href="">Кафе "ДереWня"</a></li>
-			<li><a href="">Меню</a></li>
-			<li><a href="">Банкетные залы</a></li>
-			<li><a href="">События</a></li>
-			<li><a href="">Галерея</a></li>
-			<li><a href="">3D-тур</a></li>
-			<li><a href="">Заказ столика</a></li>
-			<li><a href="">Отзывы</a></li>
-			<li><a href="">Контакты</a></li>
-		</ul>
-	</div>
 	<div class="slider">
 		<div class="flexslider">
 			<ul class="slides">

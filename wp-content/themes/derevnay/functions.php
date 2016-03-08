@@ -25,3 +25,6 @@ function kad_scripts_footer(){
 
 	wp_enqueue_script('jquery-ui-1.9.2.custom');
 }
+
+//меню
+register_nav_menu('menu', 'Верхнее меню');

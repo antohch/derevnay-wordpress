@@ -179,7 +179,8 @@ background:rgba(0, 0, 0, 0) url("images/soc.png") no-repeat scroll 100% 0px;
 .menu{
 	width:100%;
 	background: url(images/bg-menu.jpg ) repeat-x; 
-	margin-bottom:16px;
+	margin-bottom:8px;
+	overflow: hidden
 }
 .menu:after{
 	display:block;
