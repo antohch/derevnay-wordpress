@@ -32,43 +32,6 @@
 		<a href="#">Информация о поекте</a>
 	</div>
 </div>
-
-
-
-<!-- jQuery -->
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script type="text/javascript" >window.jQuery || document.write('<script src="<?php bloginfo('template_url')?>/js/libs/jquery-1.7.min.js">\x3C/script>')</script>
-
-  <!-- FlexSlider -->
-  <script type="text/javascript" defer src="<?php bloginfo('template_url')?>/js/jquery.flexslider.js"></script>
-
-  <script type="text/javascript">
-    $(function(){
-      SyntaxHighlighter.all();
-	  $( "#accordion" ).accordion();
-	  $( "#tabs" ).tabs();
-    });
-    $(window).load(function(){
-      $('.flexslider').flexslider({
-        animation: "slide",
-        start: function(slider){
-          $('body').removeClass('loading');
-        }
-      });
-    });
-  </script>
-
-
-  <!-- Syntax Highlighter -->
-  <script type="text/javascript" src="<?php bloginfo('template_url')?>/js/shCore.js"></script>
-  <script type="text/javascript" src="<?php bloginfo('template_url')?>/js/shBrushXml.js"></script>
-  <script type="text/javascript" src="<?php bloginfo('template_url')?>/js/shBrushJScript.js"></script>
-
-  <!-- Optional FlexSlider Additions -->
-  <script src="<?php bloginfo('template_url')?>/js/jquery.easing.js"></script>
-  <script src="<?php bloginfo('template_url')?>/js/jquery.mousewheel.js"></script>
-  <script type="text/javascript" defer src="<?php bloginfo('template_url')?>/js/demo.js"></script>
-  <script type="text/javascript"  src="<?php bloginfo('template_url')?>/js/jquery-ui-1.9.2.custom.js"></script>
 <?php wp_footer(); ?>
 </body>
 </html>

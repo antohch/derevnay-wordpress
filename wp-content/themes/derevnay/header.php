@@ -2,13 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css" />
-
-<!-- Demo CSS -->
-<link rel="stylesheet" href="<?php bloginfo('template_url')?>/flexslider.css" type="text/css" media="screen" />
-
-<!-- Modernizr -->
-<script type="text/javascript" src="<?php bloginfo('template_url')?>/js/modernizr.js"></script>
 
 <link href="<?php bloginfo('template_url')?>/css/custom-theme/jquery-ui-1.9.2.custom.css" rel="stylesheet" />
 <link rel="shortcut icon" href="<?php bloginfo('template_url')?>/images/favicon.ico" type="image/x-icon">
