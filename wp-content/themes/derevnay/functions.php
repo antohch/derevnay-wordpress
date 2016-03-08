@@ -48,17 +48,58 @@ function display_phone(){
 	echo "<input type='text' class='regular-text' name='my_phone[cyti1]' value='".esc_attr(get_option('my_phone[cyti1]'))."'>";
 	echo "<input type='text' class='regular-text' name='my_phone[phone1]' value='".esc_attr(get_option('my_phone[phonei1]'))."'>";
 }*/
-function my_more_options(){
-	add_settings_field(
-		'phone',//id
-		'Телефон',//название поле
-		'display_phone',//callback
-		'general');//'general'-где выводить. Cоздаем поле опции
-	register_setting(
-		'general',//название группу к какой будет принадлежать опция
-		'my_phone');//'my_phone' - название опции, которая будет сохраняться в БД. Регистрирует новую опцию и callback функции (функцию обратного вызова) для обработки значения опции при её сохранении в БД
+add_action( 'admin_init', 'wfm_theme_options' );
+
+function wfm_theme_options(){
+	register_setting( 'general', 'wfm_theme_options' );
+
+	// $id - ID секции
+	// $title - заголовок
+	// $callback - callback-функция для генерации HTML-кода
+	// $page - для какой страницы регистрируется секция
+	add_settings_section( 'wfm_theme_section_id', 'Телефон', 'wfm_theme_options_section_cb', 'general' );
+
+	add_settings_field( 'code1', 'код 1', 'code1', 'general', 'wfm_theme_section_id' );
+	add_settings_field( 'kad_phone1', 'номер 1', 'kad_phone1', 'general', 'wfm_theme_section_id' );
+	add_settings_field( 'kad_code2', 'код 2', 'code2', 'general', 'wfm_theme_section_id' );
+	add_settings_field( 'kad_phone2', 'номер 2', 'kad_phone2', 'general', 'wfm_theme_section_id' );
 }
-add_action('admin_init', 'my_more_options');//привязать к хуку
-function display_phone(){
-	echo "<input type='text' class='regular-text' name='my_phone' value='".esc_attr(get_option('my_phone'))."'>";
+
+function wfm_theme_options_section_cb(){
+	echo '<p></p>';
+}
+
+function code1(){
+	$options = get_option('wfm_theme_options');
+	?>
+
+<input type="text" name="wfm_theme_options[code1]" id="code1" value="<?php echo esc_attr($options['code1']); ?>" class="regular-text">
+
+	<?php
+}
+
+function kad_phone1(){
+	$options = get_option('wfm_theme_options');
+	?>
+
+<input type="text" name="wfm_theme_options[kad_phone1]" id="kad_phone1" value="<?php echo esc_attr($options['kad_phone1']); ?>" class="regular-text">
+
+	<?php
+}
+
+function code2(){
+	$options = get_option('wfm_theme_options');
+	?>
+
+<input type="text" name="wfm_theme_options[code2]" id="code2" value="<?php echo esc_attr($options['code2']); ?>" class="regular-text">
+	<?php
+}
+
+function kad_phone2(){
+	$options = get_option('wfm_theme_options');
+	?>
+
+<input type="text" name="wfm_theme_options[kad_phone2]" id="kad_phone2" value="<?php echo esc_attr($options['kad_phone2']); ?>" class="regular-text">
+
+	<?php
 }

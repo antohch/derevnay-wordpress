@@ -16,8 +16,9 @@
 		</div>
 		<div class="left-header">
 			<ul class="phone-li">
-				<li>+7 (988) <b class="big-phon"> 15-15-156</b></li>
-				<li>+7 (966) <b class="big-phon"> 770-15-15</b></li>
+				<?php $phone = get_option('wfm_theme_options'); ?>
+				<li><?php echo $phone['code1']; ?> <b class="big-phon"> <?php echo $phone['kad_phone1']; ?></b></li>
+				<li><?php echo $phone['code2']; ?> <b class="big-phon"> <?php echo $phone['kad_phone2']; ?></b></li>
 			</ul>
 			<div class="callback">
 				<p><a href="#" class="callback-button">Заказать звонок</a></p>
