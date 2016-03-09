@@ -25,29 +25,11 @@ function kad_scripts_footer(){
 
 	wp_enqueue_script('jquery-ui-1.9.2.custom');
 }
-
+///
 //меню
 register_nav_menu('menu', 'Верхнее меню');
-
+///
 //новый пункт в админке, телефон
-/*add_action('admin', 'kad_add_phone');
-
-function kad_add_phone(){
-	add_settings_field(
-		'phone',
-		'Телефон',
-		'display_phone',
-		'general'
-	);
-	register_setting(
-		'general',
-		'my_phone'
-	);
-}
-function display_phone(){
-	echo "<input type='text' class='regular-text' name='my_phone[cyti1]' value='".esc_attr(get_option('my_phone[cyti1]'))."'>";
-	echo "<input type='text' class='regular-text' name='my_phone[phone1]' value='".esc_attr(get_option('my_phone[phonei1]'))."'>";
-}*/
 add_action( 'admin_init', 'wfm_theme_options' );
 
 function wfm_theme_options(){
@@ -57,16 +39,27 @@ function wfm_theme_options(){
 	// $title - заголовок
 	// $callback - callback-функция для генерации HTML-кода
 	// $page - для какой страницы регистрируется секция
-	add_settings_section( 'wfm_theme_section_id', 'Телефон', 'wfm_theme_options_section_cb', 'general' );
+	add_settings_section( 'wfm_theme_section_id', 'Телефон и адрес', 'wfm_theme_options_section_cb', 'general' );
 
 	add_settings_field( 'code1', 'код 1', 'code1', 'general', 'wfm_theme_section_id' );
 	add_settings_field( 'kad_phone1', 'номер 1', 'kad_phone1', 'general', 'wfm_theme_section_id' );
 	add_settings_field( 'kad_code2', 'код 2', 'code2', 'general', 'wfm_theme_section_id' );
 	add_settings_field( 'kad_phone2', 'номер 2', 'kad_phone2', 'general', 'wfm_theme_section_id' );
+	add_settings_field( 'kad_adress', 'Адрес', 'kad_adress', 'general', 'wfm_theme_section_id' );
 }
+
 
 function wfm_theme_options_section_cb(){
 	echo '<p></p>';
+}
+
+function kad_adress(){
+	$options = get_option('wfm_theme_options');
+	?>
+
+<input type="text" name="wfm_theme_options[kad_adress]" id="kad_adress" value="<?php echo esc_attr($options['kad_adress']); ?>" class="regular-text">
+
+	<?php
 }
 
 function code1(){
@@ -103,3 +96,62 @@ function kad_phone2(){
 
 	<?php
 }
+///
+//регистрация сайдбара соц. сетей
+register_sidebar(array(
+	'name'          => 'Иконки соц. сетей',
+	'id'            => 'kad_soc',
+	'description'   => 'Сайд бар для размещения иконок с соц. сетемя',
+	'before_widget' => '',
+	'after_widget'  => '',
+));
+///
+
+//поддержка миниатюр
+add_theme_support('post-thumbnails');
+//
+
+//Создать раздел для слайдера и сам слайдер
+add_action('init', 'slider_index');
+function slider_index(){
+	register_post_type(
+		'slider', array(
+			'public' => true,
+			'supports' => array('title', 'editor','thumbnail'),
+			'labels' => array(
+				'name' => 'Слайдер',
+				'add_new' => 'Добавить слайд',
+				'all_items' => 'Все слайды',
+				'add_new_item' => 'Добавить слайд'
+			),
+			'menu_postion' => 100
+		)
+	);
+}
+
+function kad_slaider_show(){
+	$args = array(
+		'post_type' => 'slider',
+		'post_status' => 'publish'
+	);
+	$html_slider = '';
+	$slider = new WP_Query($args);
+	if($slider->have_posts()){
+		while($slider->have_posts()){
+			$slider->the_post();
+			$imgage_id = get_post_thumbnail_id();
+			$img = wp_get_attachment_image_src($imgage_id, 'full');
+			$img = $img[0];
+			//$html_slider .= $img;
+			$html_slider .= '<li>'
+							. '<div class="slide-content">'
+							. '<p><a href="'. get_the_content() .'"><img src="'. get_template_directory_uri() .'/images/slide-btn.png" alt="" /></a></p>'
+							. '</div>'
+							. '<img src="'. $img . '" alt=""  />'
+							. '</li>';
+		}
+	}
+	wp_reset_postdata();
+	return $html_slider;
+}
+//

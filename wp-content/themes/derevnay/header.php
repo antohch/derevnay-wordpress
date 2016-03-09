@@ -29,20 +29,18 @@
 		</div>
 		<div class="right-header">
 			<div class="adress">
-				<a href="">Сочи, Черноморская, 14</a>
+				<a href=""><?php echo $phone['kad_adress'] ;?></a>
 			</div>
 			<div class="soc">
 				<ul>
-					<li><a class="soc1" href="#"></a></li>
-					<li><a class="soc2" href="#"></a></li>
-					<li><a class="soc3" href="#"></a></li>
-					<li><a class="soc4" href="#"></a></li>
-					<li><a class="soc5" href="#"></a></li>
+					<?php if(!dynamic_sidebar('kad_soc')): ?>
+					<li><a class="soc1" href="#">Место для иконок соц. сетей. Использвать текстовый виджет</a></li>
+					<?php endif; ?>
 				</ul>
 			</div>
 			<div class="search">
 				<form action="">
-					<input class="serach-tex" type="text" name="search" value="" />
+					<input class="serach-tex" type="text" name="s" value="" />
 					<input class="search-button"type="image" src="<?php bloginfo('template_url')?>/images/search.jpg" name="search" alt="Поиск" />
 				</form>
 			</div>
@@ -53,17 +51,7 @@
 </div>
 <div class="content">
 	<div class="menu">
-		<!--<ul>
-			<li><a href="">Кафе "ДереWня"</a></li>
-			<li><a href="">Меню</a></li>
-			<li><a href="">Банкетные залы</a></li>
-			<li><a href="">События</a></li>
-			<li><a href="">Галерея</a></li>
-			<li><a href="">3D-тур</a></li>
-			<li><a href="">Заказ столика</a></li>
-			<li><a href="">Отзывы</a></li>
-			<li><a href="">Контакты</a></li>
-		</ul>-->
+		<!-- Меню -->
 		<?php wp_nav_menu(array(
 			'menu' => 'menu',
 			'container' => ''
