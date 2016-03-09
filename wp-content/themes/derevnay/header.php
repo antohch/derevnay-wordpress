@@ -29,7 +29,7 @@
 		</div>
 		<div class="right-header">
 			<div class="adress">
-				<a href=""><?php echo $phone['kad_adress'] ;?></a>
+				<a href="<?php echo $phone['kad_link_adress'] ;?>"><?php echo $phone['kad_adress'] ;?></a>
 			</div>
 			<div class="soc">
 				<ul>

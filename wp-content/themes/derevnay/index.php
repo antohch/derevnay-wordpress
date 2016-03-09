@@ -2,14 +2,7 @@
 	<div class="slider">
 		<div class="flexslider">
 			<ul class="slides">
-				<!--<li>
-					<div class="slide-content">
-						<p><a href="#"><img src="/images/slide-btn.png" alt="" /></a></p>
-					</div>
-					<img src="<?php bloginfo('template_url')?>/images/slide1.jpg" alt=""  />
-				</li>-->
 				<?php echo kad_slaider_show(); ?>
-
 			</ul>
 		</div>
 	</div>

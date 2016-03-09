@@ -46,6 +46,7 @@ function wfm_theme_options(){
 	add_settings_field( 'kad_code2', 'код 2', 'code2', 'general', 'wfm_theme_section_id' );
 	add_settings_field( 'kad_phone2', 'номер 2', 'kad_phone2', 'general', 'wfm_theme_section_id' );
 	add_settings_field( 'kad_adress', 'Адрес', 'kad_adress', 'general', 'wfm_theme_section_id' );
+	add_settings_field( 'kad_link_adress', 'Ссылка в адресе', 'kad_link_adress', 'general', 'wfm_theme_section_id' );
 }
 
 
@@ -93,6 +94,15 @@ function kad_phone2(){
 	?>
 
 <input type="text" name="wfm_theme_options[kad_phone2]" id="kad_phone2" value="<?php echo esc_attr($options['kad_phone2']); ?>" class="regular-text">
+
+	<?php
+}
+
+function kad_link_adress(){
+	$options = get_option('wfm_theme_options');
+	?>
+
+<input type="text" name="wfm_theme_options[kad_link_adress]" id="kad_link_adress" value="<?php echo esc_attr($options['kad_link_adress']); ?>" class="regular-text">
 
 	<?php
 }
@@ -145,9 +155,9 @@ function kad_slaider_show(){
 			//$html_slider .= $img;
 			$html_slider .= '<li>'
 							. '<div class="slide-content">'
-							. '<p><a href="'. get_the_content() .'"><img src="'. get_template_directory_uri() .'/images/slide-btn.png" alt="" /></a></p>'
+							. '<p><img src="'. get_template_directory_uri() .'/images/slide-btn.png" alt="" /></p>'
 							. '</div>'
-							. '<img src="'. $img . '" alt=""  />'
+							. '<a href="'. get_the_content() .'"><img src="'. $img . '" alt=""  /></a>'
 							. '</li>';
 		}
 	}
