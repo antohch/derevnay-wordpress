@@ -7,20 +7,6 @@
 		</div>
 	</div>
 	<div class="slider-shadow"></div>
-	
-		<!--<
-		<div class="info">
-			<a href="#">
-			<img src="<?php bloginfo('template_url')?>/images/content2.jpg" title="" alt="" />
-			<span><br />Рецепты от шеф-повара</span>
-			</a>
-		</div>
-		<div class="info">
-			<a href="#">
-			<img src="<?php bloginfo('template_url')?>/images/content3.jpg" title="" alt="" />
-			<span><br />События</span>
-			</a>
-		-->
 		<?php 
 		$post_home = new WP_Query(array(
 			'category_name' => 'for_home',
@@ -42,12 +28,21 @@
 			<?php endwhile; ?>
 			</div>
 		<?php endif; wp_reset_postdata();?>
-	
-	<div class="about">
-		<h2>О кафе</h2>
-		<p>Text text text text text text text text text text text text text text </p>
-		<p>text text text text text text text text text text text text text text text text text text text text text text  text text text text text </p>
-		<p>text text text text text text text text text text text text text text text text </p>
+	<?php 
+		$post_home = new WP_Query(array(
+			'p' => 30,
+			'post_status' => 'publish',
+			'posts_per_page' => 1,
+		));
+	?>
+		<?php if($post_home->have_posts()): ?>
+			<div class="about">
+			<?php while($post_home->have_posts()): ?>
+				<?php $post_home->the_post(); ?>
+				<h2><?php the_title(); ?></h2>
+				<p><?php echo get_the_excerpt(); ?></p>
+			<?php endwhile; ?>
+			</div>
+		<?php endif; wp_reset_postdata();?>
 	</div>
-</div>
 <?php get_footer(); ?>
