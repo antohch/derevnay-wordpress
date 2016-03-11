@@ -44,5 +44,5 @@
 			<?php endwhile; ?>
 			</div>
 		<?php endif; wp_reset_postdata();?>
-	</div>
+	
 <?php get_footer(); ?>

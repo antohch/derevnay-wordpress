@@ -1,4 +1,4 @@
-
+</div>
 <div class="wrapper"></div>
 <div class="footer">
 	<div class="copyrate">
