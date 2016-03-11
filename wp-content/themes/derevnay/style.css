@@ -362,6 +362,7 @@ background:rgba(0, 0, 0, 0) url("images/soc.png") no-repeat scroll 100% 0px;
 	font-size: 11px;
 	font-family: "Verdana";
 }
+/*menu*/
 .page-link a{
 	color: #5a2e06;
 	text-decoration: underline;
@@ -372,4 +373,48 @@ background:rgba(0, 0, 0, 0) url("images/soc.png") no-repeat scroll 100% 0px;
 span.link-in{
 	text-decoration: none;	
 	color: #e2171a;
+}
+.menu-all:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.menu-all{
+    margin: 0 auto;
+    width: 990px;
+}
+.content h1.menu-h{
+	color: #5a2e06;
+	font-size: 18px;
+	text-transform: uppercase;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+.menu-one a{
+	font-size: 17px;
+	color: #5a2e06;
+	text-decoration: underline;
+	position:absolute;
+	bottom:0;
+	width:  100%;
+	display: block;
+	text-align: center;
+
+}
+.menu-one img{
+	display: block;
+	margin: 0 auto;
+}
+.menu-one{
+	float: left;
+	width: 25%;
+	margin-bottom: 50px;
+	height: 150px;
+	position: relative;
+}
+.menu-img{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	margin-bottom: 25px;
 }
