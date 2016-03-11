@@ -34,7 +34,7 @@
 			<div class="soc">
 				<ul>
 					<?php if(!dynamic_sidebar('kad_soc')): ?>
-					<li><a class="soc1" href="#">Место для иконок соц. сетей. Использвать текстовый виджет</a></li>
+					<li><a class="soc1" href="#">Использвать текстовый виджет</a></li>
 					<?php endif; ?>
 				</ul>
 			</div>

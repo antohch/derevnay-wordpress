@@ -198,7 +198,9 @@ background:rgba(0, 0, 0, 0) url("images/soc.png") no-repeat scroll 100% 0px;
 	width: 1073px;
 }
 .menu ul li:after{
-	content:" | ";
+	content:"|";
+	width: 4px;
+	display: inline-block;
 }
 .menu ul li:last-child:after{
 	display:none;
@@ -206,7 +208,13 @@ background:rgba(0, 0, 0, 0) url("images/soc.png") no-repeat scroll 100% 0px;
 .menu ul li a{
 	display:inline-block;
 	color:#fff;
-	padding: 12px 15px 15px 15px;
+	padding: 12px 14px 15px 15px;
+}
+.menu ul li:hover{
+	background: url(images/bg-menu-hover.jpg) repeat-x;
+}
+.menu ul li a:hover{
+	text-decoration:none;
 }
 /*info*/
 .info-all:after{
