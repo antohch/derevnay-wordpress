@@ -2,8 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-
-<link href="<?php bloginfo('template_url')?>/css/custom-theme/jquery-ui-1.9.2.custom.css" rel="stylesheet" />
 <link rel="shortcut icon" href="<?php bloginfo('template_url')?>/images/favicon.ico" type="image/x-icon">
 <title>Деревня</title>
 <?php wp_head(); ?>

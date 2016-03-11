@@ -155,7 +155,6 @@ function kad_slaider_show(){
 			//$html_slider .= $img;
 			$html_slider .= '<li>'
 							. '<div class="slide-content">'
-							. '<p><img src="'. get_template_directory_uri() .'/images/slide-btn.png" alt="" /></p>'
 							. '</div>'
 							. '<a href="'. get_the_content() .'"><img src="'. $img . '" alt=""  /></a>'
 							. '</li>';
