@@ -355,3 +355,21 @@ background:rgba(0, 0, 0, 0) url("images/soc.png") no-repeat scroll 100% 0px;
 	margin-right: 1px;
 	width: 120px
 }
+.link-map{
+	margin-top: 3px;
+}
+.page-link{
+	font-size: 11px;
+	font-family: "Verdana";
+}
+.page-link a{
+	color: #5a2e06;
+	text-decoration: underline;
+}
+.page-link a:hover{
+	color: #e2171a;
+}
+span.link-in{
+	text-decoration: none;	
+	color: #e2171a;
+}
