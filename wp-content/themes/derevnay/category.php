@@ -1,6 +1,12 @@
 <?php get_header();?>
+<?php 
+/*Так как шаблон для категорий один, пришлось ставить условия. Если есть родитель меню то выведу вот это*/
+global $post;
+$cat = get_the_category($post->ID);
+if($cat[0]->category_parent == 5):
+?>
 <div class="link-map">
-	<p class="page-link"><a href="/">Главная</a><span></span> > <span><a href="#">Меню</a></span> > <span class="link-in">Горячие блюда</span></p>
+	<p class="page-link"><a href="/">Главная</a><span></span> > <span><a href="<?php echo get_category_link($cat[0]->category_parent); ?>">Меню</a></span> > <span class="link-in">Горячие блюда</span></p>
 </div>
 <h1 class="menu-h">Горячие блюда</h1>
 <div class="bluda-all">
@@ -8,7 +14,6 @@
        <?php while(have_posts()): ?>
             <?php the_post(); ?>
 			<div class="bluda-one">
-				<!--<img class="bluda-img" src="<?php echo get_the_post_thumbnail(); ?>" alt="" title="" />-->
 				<?php echo get_the_post_thumbnail(null, 'full', array('class' => 'bluda-img')); ?>
 				<div class="bluda-text">
 					<div class="name-bluda"><?php the_title(); ?></div>
@@ -19,4 +24,5 @@
         <?php endwhile; ?>
     <?php endif; ?>
 </div>
+<?php endif; //Коне сприска для потомка меню ?>
 <?php get_footer();?>

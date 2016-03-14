@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: phpmyadmin
--- Время создания: Мар 14 2016 г., 17:35
+-- Время создания: Мар 14 2016 г., 17:56
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `de_options` (
   `autoload` varchar(20) NOT NULL DEFAULT 'yes',
   PRIMARY KEY (`option_id`),
   UNIQUE KEY `option_name` (`option_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=353 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=354 ;
 
 --
 -- Дамп данных таблицы `de_options`
@@ -277,7 +277,7 @@ CREATE TABLE IF NOT EXISTS `de_postmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `post_id` (`post_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=206 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=212 ;
 
 --
 -- Дамп данных таблицы `de_postmeta`
@@ -451,10 +451,14 @@ INSERT INTO `de_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (193, 55, '_wp_attachment_metadata', 'a:5:{s:5:"width";i:236;s:6:"height";i:156;s:4:"file";s:17:"2016/03/menu1.jpg";s:5:"sizes";a:1:{s:9:"thumbnail";a:4:{s:4:"file";s:17:"menu1-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}'),
 (194, 52, '_thumbnail_id', '55'),
 (197, 56, '_edit_last', '1'),
-(198, 56, '_edit_lock', '1457962473:1'),
+(198, 56, '_edit_lock', '1457963175:1'),
 (199, 56, 'massa', '100 гр'),
 (200, 56, 'summ', '430'),
-(203, 56, '_thumbnail_id', '54');
+(203, 56, '_thumbnail_id', '54'),
+(206, 58, '_edit_last', '1'),
+(207, 58, '_edit_lock', '1457963677:1'),
+(208, 58, 'massa', '120 гр'),
+(209, 58, 'summ', '600');
 
 -- --------------------------------------------------------
 
@@ -491,7 +495,7 @@ CREATE TABLE IF NOT EXISTS `de_posts` (
   KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
   KEY `post_parent` (`post_parent`),
   KEY `post_author` (`post_author`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=58 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=60 ;
 
 --
 -- Дамп данных таблицы `de_posts`
@@ -552,7 +556,9 @@ INSERT INTO `de_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (54, 1, '2016-03-14 13:57:12', '2016-03-14 10:57:12', '', 'menu2', '', 'inherit', 'open', 'closed', '', 'menu2-2', '', '', '2016-03-14 13:57:12', '2016-03-14 10:57:12', '', 52, 'http://derevnay/wp-content/uploads/2016/03/menu2.jpg', 0, 'attachment', 'image/jpeg', 0),
 (55, 1, '2016-03-14 13:57:13', '2016-03-14 10:57:13', '', 'menu1', '', 'inherit', 'open', 'closed', '', 'menu1-2', '', '', '2016-03-14 13:57:13', '2016-03-14 10:57:13', '', 52, 'http://derevnay/wp-content/uploads/2016/03/menu1.jpg', 0, 'attachment', 'image/jpeg', 0),
 (56, 1, '2016-03-14 13:58:15', '2016-03-14 10:58:15', '', 'Название блюда название блюда блюда', '', 'publish', 'open', 'open', '', '%d0%bd%d0%b0%d0%b7%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5-%d0%b1%d0%bb%d1%8e%d0%b4%d0%b0-%d0%bd%d0%b0%d0%b7%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5-%d0%b1%d0%bb%d1%8e%d0%b4%d0%b0-%d0%b1%d0%bb%d1%8e%d0%b4%d0%b0', '', '', '2016-03-14 16:31:14', '2016-03-14 13:31:14', '', 0, 'http://derevnay/?p=56', 0, 'post', '', 0),
-(57, 1, '2016-03-14 13:58:15', '2016-03-14 10:58:15', '', 'Название блюда название блюда блюда', '', 'inherit', 'closed', 'closed', '', '56-revision-v1', '', '', '2016-03-14 13:58:15', '2016-03-14 10:58:15', '', 56, 'http://derevnay/56-revision-v1/', 0, 'revision', '', 0);
+(57, 1, '2016-03-14 13:58:15', '2016-03-14 10:58:15', '', 'Название блюда название блюда блюда', '', 'inherit', 'closed', 'closed', '', '56-revision-v1', '', '', '2016-03-14 13:58:15', '2016-03-14 10:58:15', '', 56, 'http://derevnay/56-revision-v1/', 0, 'revision', '', 0),
+(58, 1, '2016-03-14 16:54:35', '2016-03-14 13:54:35', '', 'Свинина по татарске', '', 'publish', 'open', 'open', '', '%d1%81%d0%b2%d0%b8%d0%bd%d0%b8%d0%bd%d0%b0-%d0%bf%d0%be-%d1%82%d0%b0%d1%82%d0%b0%d1%80%d1%81%d0%ba%d0%b5', '', '', '2016-03-14 16:54:35', '2016-03-14 13:54:35', '', 0, 'http://derevnay/?p=58', 0, 'post', '', 0),
+(59, 1, '2016-03-14 16:54:35', '2016-03-14 13:54:35', '', 'Свинина по татарске', '', 'inherit', 'closed', 'closed', '', '58-revision-v1', '', '', '2016-03-14 16:54:35', '2016-03-14 13:54:35', '', 58, 'http://derevnay/58-revision-v1/', 0, 'revision', '', 0);
 
 -- --------------------------------------------------------
 
@@ -640,7 +646,8 @@ INSERT INTO `de_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 (30, 4, 0),
 (34, 2, 0),
 (52, 13, 0),
-(56, 13, 0);
+(56, 13, 0),
+(58, 6, 0);
 
 -- --------------------------------------------------------
 
@@ -670,7 +677,7 @@ INSERT INTO `de_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 (3, 3, 'category', '', 0, 3),
 (4, 4, 'category', '', 0, 1),
 (5, 5, 'category', '', 0, 0),
-(6, 6, 'category', 'http://derevnay/wp-content/uploads/2016/03/menu1.png', 5, 0),
+(6, 6, 'category', 'http://derevnay/wp-content/uploads/2016/03/menu1.png', 5, 1),
 (7, 7, 'category', 'http://derevnay/wp-content/uploads/2016/03/menu2.png', 5, 0),
 (8, 8, 'category', 'http://derevnay/wp-content/uploads/2016/03/menu3.png', 5, 0),
 (9, 9, 'category', 'http://derevnay/wp-content/uploads/2016/03/menu4.png', 5, 0),
