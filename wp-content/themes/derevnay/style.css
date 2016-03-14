@@ -391,7 +391,6 @@ span.link-in{
 	margin-bottom: 30px;
 }
 .menu-one a{
-    bottom: -120px;
     color: #5a2e06;
     display: block;
     font-size: 17px;
@@ -419,5 +418,58 @@ span.link-in{
 	margin-bottom: 37px;
 }
 .menu-a{
-	margin: 0 auto;
+	margin: 112px auto 0;
+}
+
+/*Блюда*/
+.bluda-all{
+	color: #5a2e06;
+	font-size: 17px;
+}
+.bluda-one:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.bluda-one{
+	border-bottom: 1px solid #5a2d06;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+.bluda-text{
+	float: right;
+	width: 74%;
+	padding-top: 10px;
+}
+img.bluda-img{
+	border: 1px solid #fff
+}
+img.bluda-rub{
+	vertical-align: middle;
+}
+
+.bluda-rub{
+	font-size: 21px;
+	font-weight: 600;
+}
+.bluda-text:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.name-bluda{
+	float: left;
+}
+.name-bluda{
+	width: 65%;
+}
+.mass{
+	width: 100px;
+	float: left;
+	padding-left: 36px;
+}
+.bluda-rub{
+	width: 100px;
+	float: right;
+	text-align: right;
 }

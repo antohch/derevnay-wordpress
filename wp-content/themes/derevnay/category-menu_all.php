@@ -15,7 +15,7 @@ if($menu_all):
 	foreach($menu_all as $menu_one):
 ?>
 	<div class="menu-one">
-		<div class="menu-img"><img src="<?php echo str_replace(array("<p>", "</p>"), "", category_description($menu_one->cat_ID)); ?>" alt="" title="" /></div>
+		<a href="<?php echo get_category_link($menu_one->cat_ID)?>"><div class="menu-img"><img src="<?php echo str_replace(array("<p>", "</p>"), "", category_description($menu_one->cat_ID)); ?>" alt="" title="" /></div></a>
 		<div class="menu-a"><a href="<?php echo get_category_link($menu_one->cat_ID)?>"><?php echo $menu_one->name; ?></a></div>
 	</div>
 	<?php endforeach; ?>
