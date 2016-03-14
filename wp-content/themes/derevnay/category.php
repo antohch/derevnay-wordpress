@@ -16,7 +16,7 @@ if($cat[0]->category_parent == 5):
 			<div class="bluda-one">
 				<?php echo get_the_post_thumbnail(null, 'full', array('class' => 'bluda-img')); ?>
 				<div class="bluda-text">
-					<div class="name-bluda"><?php the_title(); ?></div>
+					<div class="name-bluda"><a href="#"><?php the_title(); ?></a></div>
 					<div class="mass"><?php echo get_post_meta(get_the_ID(), 'massa', true);?></div>
 					<div class="bluda-rub"><?php echo get_post_meta(get_the_ID(), 'summ', true);?> <img src="<?php bloginfo('template_url'); ?>/images/rub.png"></div>
 				</div>

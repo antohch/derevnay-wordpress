@@ -439,7 +439,7 @@ span.link-in{
 .bluda-text{
 	float: right;
 	width: 74%;
-	padding-top: 10px;
+	padding-top: 60px;
 }
 img.bluda-img{
 	border: 1px solid #fff
@@ -459,6 +459,9 @@ img.bluda-rub{
 }
 .name-bluda{
 	float: left;
+}
+.name-bluda a{
+	color: #5a2e06;
 }
 .name-bluda{
 	width: 65%;
