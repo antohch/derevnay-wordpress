@@ -476,3 +476,21 @@ img.bluda-rub{
 	float: right;
 	text-align: right;
 }
+/*пагинация*/
+.pager{
+	text-align: right;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+.pager a{
+	color: #5a2e06;
+	text-decoration: underline;
+	padding: 0 10px;
+}
+.pager span{
+	color: #e2171a;
+}
+a.next, a.prev{
+	text-decoration: none;
+	padding: 0;
+}

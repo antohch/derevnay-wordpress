@@ -14,9 +14,9 @@ if($cat[0]->category_parent == 5):
        <?php while(have_posts()): ?>
             <?php the_post(); ?>
 			<div class="bluda-one">
-				<?php echo get_the_post_thumbnail(null, 'full', array('class' => 'bluda-img')); ?>
+				<a href="<?php the_permalink(); ?>"><?php echo get_the_post_thumbnail(null, array(236, 156), array('class' => 'bluda-img')); ?></a>
 				<div class="bluda-text">
-					<div class="name-bluda"><a href="#"><?php the_title(); ?></a></div>
+					<div class="name-bluda"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
 					<div class="mass"><?php echo get_post_meta(get_the_ID(), 'massa', true);?></div>
 					<div class="bluda-rub"><?php echo get_post_meta(get_the_ID(), 'summ', true);?> <img src="<?php bloginfo('template_url'); ?>/images/rub.png"></div>
 				</div>
@@ -24,5 +24,6 @@ if($cat[0]->category_parent == 5):
         <?php endwhile; ?>
     <?php endif; ?>
 </div>
-<?php endif; //Коне сприска для потомка меню ?>
+<?php wp_corenavi(); ?>
+<?php endif; //Конец для списка для потомка меню ?>
 <?php get_footer();?>
