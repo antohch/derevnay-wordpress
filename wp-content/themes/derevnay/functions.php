@@ -11,6 +11,8 @@ function kad_styles_scripts(){
 }
 
 function kad_scripts_footer(){
+	wp_register_script('true_loadmore', get_template_directory_uri(). '/js/loadmore.js', array('jquery'));//для ajax пагинация
+	
 	wp_register_script('jquery.min.google', 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
 	wp_register_script('jsslaider2', get_template_directory_uri(). '/js/jsslaider2.js', array('jquery.min.google'));
 	wp_register_script('flexslider', get_template_directory_uri(). '/js/jquery.flexslider.js', array('jsslaider2'));
@@ -24,6 +26,8 @@ function kad_scripts_footer(){
 	wp_register_script('jquery-ui-1.9.2.custom', get_template_directory_uri(). '/js/jquery-ui-1.9.2.custom.js', array('demo'));
 
 	wp_enqueue_script('jquery-ui-1.9.2.custom');
+	
+	wp_enqueue_script('true_loadmore');
 }
 ///
 //меню
@@ -167,7 +171,7 @@ function kad_slaider_show(){
 
 //пагинация
 /**
-* пагинация
+* пагинация ajax
 **/
 function wp_corenavi(){
 	global $wp_query, $wp_rewrite;
@@ -189,4 +193,30 @@ function wp_corenavi(){
 	echo $pages . paginate_links($a);
 	if ($max > 1) echo '</div>';
 }
+
+function true_load_posts(){
+	$args = unserialize(stripslashes($_POST['query']));
+	$args['paged'] = $_POST['page'] + 1; // следующая страница
+	$args['post_status'] = 'publish';
+	$q = new WP_Query($args);
+		if ($q->have_posts()): ?>
+       <?php while($q->have_posts()): ?>
+            <?php $q->the_post(); ?>
+			<div class="bluda-one">
+				<a href="<?php the_permalink(); ?>"><?php echo get_the_post_thumbnail(null, array(236, 156), array('class' => 'bluda-img')); ?></a>
+				<div class="bluda-text">
+					<div class="name-bluda"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
+					<div class="mass"><?php echo get_post_meta(get_the_ID(), 'massa', true);?></div>
+					<div class="bluda-rub"><?php echo get_post_meta(get_the_ID(), 'summ', true);?> <img src="<?php bloginfo('template_url'); ?>/images/rub.png"></div>
+				</div>
+			</div>
+        <?php endwhile; ?>
+    <?php endif;
+	wp_reset_postdata();
+	die();
+}
+ 
+
+add_action('wp_ajax_loadmore', 'true_load_posts');
+add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');
 //
